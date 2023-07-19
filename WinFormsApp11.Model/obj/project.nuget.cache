@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "w6v7JgkI2TY3Fzqe6OWJOkG76abGTT+GufxPegZlEn8sRp0I5gfpbq6EMUptGoC3IpDJVcIYU5mTP4dlNVUtvQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\UY1-07\\Desktop\\Kayıt Defteri\\WinFormsApp11\\WinFormsApp11.Model\\WinFormsApp11.Model.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\UY1-07\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
+    "C:\\Users\\UY1-07\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512"
+  ],
+  "logs": []
+}

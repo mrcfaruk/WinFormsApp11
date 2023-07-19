@@ -1,0 +1,12 @@
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinFormsApp11.Model\bin\Debug\net6.0\WinFormsApp11.Model.deps.json
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinFormsApp11.Model\bin\Debug\net6.0\WinFormsApp11.Model.dll
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinFormsApp11.Model\bin\Debug\net6.0\WinFormsApp11.Model.pdb
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinFormsApp11.Model\obj\Debug\net6.0\WinFormsApp11.Model.csproj.AssemblyReference.cache
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinFormsApp11.Model\obj\Debug\net6.0\WinFormsApp11.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinFormsApp11.Model\obj\Debug\net6.0\WinFormsApp11.Model.AssemblyInfoInputs.cache
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinFormsApp11.Model\obj\Debug\net6.0\WinFormsApp11.Model.AssemblyInfo.cs
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinFormsApp11.Model\obj\Debug\net6.0\WinFormsApp11.Model.csproj.CoreCompileInputs.cache
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinFormsApp11.Model\obj\Debug\net6.0\WinFormsApp11.Model.dll
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinFormsApp11.Model\obj\Debug\net6.0\refint\WinFormsApp11.Model.dll
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinFormsApp11.Model\obj\Debug\net6.0\WinFormsApp11.Model.pdb
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinFormsApp11.Model\obj\Debug\net6.0\ref\WinFormsApp11.Model.dll

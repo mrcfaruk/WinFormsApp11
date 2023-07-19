@@ -1,0 +1,17 @@
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinApp.Bussiness\bin\Debug\net6.0\WinFormsapp11.Bussiness.deps.json
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinApp.Bussiness\bin\Debug\net6.0\WinFormsapp11.Bussiness.dll
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinApp.Bussiness\bin\Debug\net6.0\WinFormsapp11.Bussiness.pdb
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinApp.Bussiness\bin\Debug\net6.0\WinFormsApp11.Core.dll
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinApp.Bussiness\bin\Debug\net6.0\WinFormsApp11.Model.dll
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinApp.Bussiness\bin\Debug\net6.0\WinFormsApp11.Core.pdb
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinApp.Bussiness\bin\Debug\net6.0\WinFormsApp11.Model.pdb
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinApp.Bussiness\obj\Debug\net6.0\WinFormsapp11.Bussiness.csproj.AssemblyReference.cache
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinApp.Bussiness\obj\Debug\net6.0\WinFormsapp11.Bussiness.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinApp.Bussiness\obj\Debug\net6.0\WinFormsapp11.Bussiness.AssemblyInfoInputs.cache
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinApp.Bussiness\obj\Debug\net6.0\WinFormsapp11.Bussiness.AssemblyInfo.cs
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinApp.Bussiness\obj\Debug\net6.0\WinFormsapp11.Bussiness.csproj.CoreCompileInputs.cache
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinApp.Bussiness\obj\Debug\net6.0\WinFormsapp11.Bussiness.csproj.CopyComplete
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinApp.Bussiness\obj\Debug\net6.0\WinFormsapp11.Bussiness.dll
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinApp.Bussiness\obj\Debug\net6.0\refint\WinFormsapp11.Bussiness.dll
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinApp.Bussiness\obj\Debug\net6.0\WinFormsapp11.Bussiness.pdb
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinApp.Bussiness\obj\Debug\net6.0\ref\WinFormsapp11.Bussiness.dll
