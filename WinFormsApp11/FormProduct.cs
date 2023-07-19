@@ -14,29 +14,31 @@ namespace WinFormsApp11
 {
     public partial class FormProduct : Form
     {
-        Urun urun = new();
-        public FormProduct(int id = 0) 
+        FormProductList? _formProductList;
+        Urun _urun = new();
+        public FormProduct(FormProductList? formProductList =null, int id = 0) 
         {
             InitializeComponent();
             if (id != 0)
             {
-                urun = new UrunManager().Get(id);
-                textBoxName.Text = urun.stokAdi;
-                textBoxBarkod.Text = urun.barkod;
-                textBoxAdet.Text = urun.adet.ToString();
-                textBoxPrice.Text = Convert.ToString(urun.fiyat);
+                _formProductList = formProductList;
+                _urun = new UrunManager().Get(id);
+                textBoxName.Text = _urun.stokAdi;
+                textBoxBarkod.Text = _urun.barkod;
+                textBoxAdet.Text = _urun.adet.ToString();
+                textBoxPrice.Text = Convert.ToString(_urun.fiyat);
                 
                 
 
-                int kdvIndex = comboBoxKDV.FindStringExact($"%{urun.kdvOrani}");
+                int kdvIndex = comboBoxKDV.FindStringExact($"%{_urun.kdvOrani}");
                 comboBoxKDV.SelectedIndex = kdvIndex;
 
-                int olcuBirimiIndex = comboBoxBirim.FindStringExact(urun.olcuBirimi);
+                int olcuBirimiIndex = comboBoxBirim.FindStringExact(_urun.olcuBirimi);
                 comboBoxBirim.SelectedIndex = olcuBirimiIndex;
 
 
 
-                switch (urun.paraBirimi)
+                switch (_urun.paraBirimi)
                 {
                     case "TRY":
                         radioButtonTRY.Checked = true;
@@ -135,7 +137,7 @@ namespace WinFormsApp11
             checkBoxAktif.Checked = true;
 
 
-            if (urun == null)
+            if (_urun == null)
             {
                 radioButtonTRY.Checked = true;
                 comboBoxKDV.SelectedIndex = 3;
@@ -234,8 +236,10 @@ namespace WinFormsApp11
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            
             Urun urun = new()
             {
+                Id = _urun.Id,
                 stokAdi = textBoxName.Text,
                 fiyat = Convert.ToDouble(textBoxPrice.Text),
                 barkod = textBoxBarkod.Text,
@@ -261,7 +265,29 @@ namespace WinFormsApp11
             }
 
             UrunManager urunManager = new UrunManager();
-            urunManager.Create(urun);
+
+
+            if (_urun.Id == 0)
+            {
+                urunManager.Create(urun); //ürün yoksa ekle
+                MessageBox.Show("Kayıt başarılı", "Kayıt işlemi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Ürün Güncellenecek Emin Misiniz?", "Ürün başarıyla güncellendi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                urunManager.Update(urun); //ürün varsa güncelle
+                MessageBox.Show("Ürün Güncellendi", "Ürün başarıyla güncellendi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                if(result == DialogResult.Yes)
+                {
+                    urunManager.Update(urun);
+                    _formProductList!.UrunlerGetir();
+                    this.Close();
+                }
+            }
+
+
+
         }
 
         private void listBoxozellik_SelectedIndexChanged_1(object sender, EventArgs e)

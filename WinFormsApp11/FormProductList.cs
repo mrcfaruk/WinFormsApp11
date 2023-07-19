@@ -18,12 +18,11 @@ namespace WinFormsApp11
         {
             InitializeComponent();
         }
-
-        private void FormProductList_Load(object sender, EventArgs e)
+        public void UrunlerGetir()
         {
+            dataGridViewUrunler.Rows.Clear();
             IEnumerable<Urun> urunler = new UrunManager().GetAll(); //veriyi çek ve işle
-            //UrunManager urunMnager = new UrunManager();
-            //IEnumerable<Urun> urunler2 = urunMnager.GetAll();
+
 
             
             urunler.ToList().ForEach(urun =>
@@ -38,19 +37,18 @@ namespace WinFormsApp11
                 row.Cells[dataGridViewUrunler.Columns["OlcuBirimi"].Index].Value = urun.olcuBirimi;
                 row.Cells[dataGridViewUrunler.Columns["Adet"].Index].Value = urun.adet;
                 row.Cells[dataGridViewUrunler.Columns["Barkod"].Index].Value = urun.barkod;
-                
+
 
                 dataGridViewUrunler.Rows.Add(row);
 
 
             });
-            
-            
-            
+        }
 
+        private void FormProductList_Load(object sender, EventArgs e)
+        {
 
-
-            
+            UrunlerGetir();
         }
 
         private void buttonSil_Click(object sender, EventArgs e)
@@ -76,7 +74,7 @@ namespace WinFormsApp11
             DataGridViewRow selectedRow = dataGridViewUrunler.Rows[selectedRowIndex];
             int id = Convert.ToInt32(selectedRow.Cells["Id"].Value.ToString());
             
-            FormProduct formProduct = new(id);
+            FormProduct formProduct = new(this,id);
             formProduct.ShowDialog();
         }
     }
