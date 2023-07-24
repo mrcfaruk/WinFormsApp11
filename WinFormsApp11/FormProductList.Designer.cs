@@ -62,7 +62,7 @@
             this.dataGridViewUrunler.Name = "dataGridViewUrunler";
             this.dataGridViewUrunler.ReadOnly = true;
             this.dataGridViewUrunler.RowTemplate.Height = 29;
-            this.dataGridViewUrunler.Size = new System.Drawing.Size(1137, 372);
+            this.dataGridViewUrunler.Size = new System.Drawing.Size(1144, 372);
             this.dataGridViewUrunler.TabIndex = 0;
             // 
             // StokAdi
@@ -138,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1137, 441);
+            this.ClientSize = new System.Drawing.Size(1142, 441);
             this.Controls.Add(this.buttonSil);
             this.Controls.Add(this.buttonDuzenle);
             this.Controls.Add(this.dataGridViewUrunler);

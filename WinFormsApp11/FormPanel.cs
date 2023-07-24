@@ -31,9 +31,9 @@ namespace WinFormsApp11
 
         private void LogoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using(StreamWriter sw = new StreamWriter("login.txt"))
+            using (StreamWriter sw = new StreamWriter("login.txt"))
             {
-                
+
             }
             this.Hide();
             FormLogin formlogin = new();

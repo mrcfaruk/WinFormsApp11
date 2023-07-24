@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WinFormsApp11.Model.Enums;
 
 namespace WinFormsApp11.Models
 {
@@ -20,7 +21,7 @@ namespace WinFormsApp11.Models
 
         public int kdvOrani { get; set; }
 
-        public string paraBirimi { get; set; } = "";
+        public ParaBirimi paraBirimi { get; set; }
 
         public string olcuBirimi{ get; set; } = "";
 

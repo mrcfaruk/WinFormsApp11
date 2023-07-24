@@ -54,6 +54,7 @@
             this.radioButtonTRY = new System.Windows.Forms.RadioButton();
             this.radioButtonUSD = new System.Windows.Forms.RadioButton();
             this.radioButtonEUR = new System.Windows.Forms.RadioButton();
+            this.labelStokAdiLimit = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,8 @@
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(114, 27);
             this.textBoxName.TabIndex = 0;
+            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
+            this.textBoxName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxName_KeyPress);
             // 
             // label1
             // 
@@ -77,7 +80,7 @@
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(14, 95);
+            this.textBoxPrice.Location = new System.Drawing.Point(12, 121);
             this.textBoxPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(114, 27);
@@ -88,7 +91,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 71);
+            this.label2.Location = new System.Drawing.Point(14, 97);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 20);
             this.label2.TabIndex = 3;
@@ -116,7 +119,7 @@
             "Gram",
             "Litre",
             "Santimetre"});
-            this.comboBoxBirim.Location = new System.Drawing.Point(14, 193);
+            this.comboBoxBirim.Location = new System.Drawing.Point(12, 208);
             this.comboBoxBirim.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxBirim.Name = "comboBoxBirim";
             this.comboBoxBirim.Size = new System.Drawing.Size(114, 28);
@@ -125,7 +128,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 167);
+            this.label3.Location = new System.Drawing.Point(12, 184);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 20);
             this.label3.TabIndex = 6;
@@ -135,7 +138,7 @@
             // 
             this.dateTimePickerTarih.CustomFormat = "yyyy-MM-dd HH:mm";
             this.dateTimePickerTarih.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerTarih.Location = new System.Drawing.Point(14, 256);
+            this.dateTimePickerTarih.Location = new System.Drawing.Point(14, 273);
             this.dateTimePickerTarih.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePickerTarih.Name = "dateTimePickerTarih";
             this.dateTimePickerTarih.Size = new System.Drawing.Size(142, 27);
@@ -144,7 +147,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 232);
+            this.label4.Location = new System.Drawing.Point(14, 249);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 20);
             this.label4.TabIndex = 8;
@@ -156,9 +159,9 @@
             this.comboBoxKDV.Items.AddRange(new object[] {
             "%0",
             "%1",
-            "%8",
-            "%18"});
-            this.comboBoxKDV.Location = new System.Drawing.Point(135, 95);
+            "%10",
+            "%20"});
+            this.comboBoxKDV.Location = new System.Drawing.Point(138, 120);
             this.comboBoxKDV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxKDV.Name = "comboBoxKDV";
             this.comboBoxKDV.Size = new System.Drawing.Size(57, 28);
@@ -259,7 +262,7 @@
             // 
             // textBoxAdet
             // 
-            this.textBoxAdet.Location = new System.Drawing.Point(131, 193);
+            this.textBoxAdet.Location = new System.Drawing.Point(132, 208);
             this.textBoxAdet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxAdet.Name = "textBoxAdet";
             this.textBoxAdet.Size = new System.Drawing.Size(60, 27);
@@ -270,7 +273,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(135, 167);
+            this.label7.Location = new System.Drawing.Point(135, 184);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 20);
             this.label7.TabIndex = 16;
@@ -278,7 +281,7 @@
             // 
             // textBoxozellik
             // 
-            this.textBoxozellik.Location = new System.Drawing.Point(12, 291);
+            this.textBoxozellik.Location = new System.Drawing.Point(12, 308);
             this.textBoxozellik.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxozellik.Name = "textBoxozellik";
             this.textBoxozellik.Size = new System.Drawing.Size(137, 27);
@@ -289,7 +292,7 @@
             // 
             this.listBoxozellik.FormattingEnabled = true;
             this.listBoxozellik.ItemHeight = 20;
-            this.listBoxozellik.Location = new System.Drawing.Point(14, 321);
+            this.listBoxozellik.Location = new System.Drawing.Point(12, 343);
             this.listBoxozellik.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBoxozellik.Name = "listBoxozellik";
             this.listBoxozellik.Size = new System.Drawing.Size(137, 124);
@@ -300,7 +303,7 @@
             // radioButtonTRY
             // 
             this.radioButtonTRY.AutoSize = true;
-            this.radioButtonTRY.Location = new System.Drawing.Point(14, 133);
+            this.radioButtonTRY.Location = new System.Drawing.Point(14, 156);
             this.radioButtonTRY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButtonTRY.Name = "radioButtonTRY";
             this.radioButtonTRY.Size = new System.Drawing.Size(52, 24);
@@ -312,7 +315,7 @@
             // radioButtonUSD
             // 
             this.radioButtonUSD.AutoSize = true;
-            this.radioButtonUSD.Location = new System.Drawing.Point(72, 137);
+            this.radioButtonUSD.Location = new System.Drawing.Point(72, 156);
             this.radioButtonUSD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButtonUSD.Name = "radioButtonUSD";
             this.radioButtonUSD.Size = new System.Drawing.Size(56, 24);
@@ -324,7 +327,7 @@
             // radioButtonEUR
             // 
             this.radioButtonEUR.AutoSize = true;
-            this.radioButtonEUR.Location = new System.Drawing.Point(134, 137);
+            this.radioButtonEUR.Location = new System.Drawing.Point(138, 156);
             this.radioButtonEUR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButtonEUR.Name = "radioButtonEUR";
             this.radioButtonEUR.Size = new System.Drawing.Size(54, 24);
@@ -333,11 +336,21 @@
             this.radioButtonEUR.Text = "EUR";
             this.radioButtonEUR.UseVisualStyleBackColor = true;
             // 
+            // labelStokAdiLimit
+            // 
+            this.labelStokAdiLimit.AutoSize = true;
+            this.labelStokAdiLimit.Location = new System.Drawing.Point(101, 67);
+            this.labelStokAdiLimit.Name = "labelStokAdiLimit";
+            this.labelStokAdiLimit.Size = new System.Drawing.Size(25, 20);
+            this.labelStokAdiLimit.TabIndex = 22;
+            this.labelStokAdiLimit.Text = "50";
+            // 
             // FormProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 445);
+            this.ClientSize = new System.Drawing.Size(622, 480);
+            this.Controls.Add(this.labelStokAdiLimit);
             this.Controls.Add(this.radioButtonEUR);
             this.Controls.Add(this.radioButtonUSD);
             this.Controls.Add(this.radioButtonTRY);
@@ -401,5 +414,6 @@
         private RadioButton radioButtonTRY;
         private RadioButton radioButtonUSD;
         private RadioButton radioButtonEUR;
+        private Label labelStokAdiLimit;
     }
 }

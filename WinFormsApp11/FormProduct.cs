@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsapp11.Bussiness;
+using WinFormsApp11.Model.Enums;
 using WinFormsApp11.Models;
 
 namespace WinFormsApp11
@@ -36,18 +37,23 @@ namespace WinFormsApp11
                 int olcuBirimiIndex = comboBoxBirim.FindStringExact(_urun.olcuBirimi);
                 comboBoxBirim.SelectedIndex = olcuBirimiIndex;
 
-
+                if (!string.IsNullOrEmpty(_urun.Resim))
+                {
+                    Image image = Image.FromFile($"Images/{_urun.Resim}");
+                    pictureBox1.Image = image;
+                }
+                
 
                 switch (_urun.paraBirimi)
                 {
-                    case "TRY":
+                    case ParaBirimi.TRY:
                         radioButtonTRY.Checked = true;
                         break;
 
-                    case "EUR":
+                    case ParaBirimi.EUR:
                         radioButtonEUR.Checked = true;
                         break;
-                    case "USD":
+                    default:
                         radioButtonUSD.Checked = true;
                         break;
                 }
@@ -254,9 +260,27 @@ namespace WinFormsApp11
 
             };
 
-            if (radioButtonTRY.Checked) urun.paraBirimi = "TRY";
-            if (radioButtonUSD.Checked) urun.paraBirimi = "USD";
-            if (radioButtonEUR.Checked) urun.paraBirimi = "EUR";
+            if (radioButtonTRY.Checked) urun.paraBirimi = ParaBirimi.TRY;
+            else if (radioButtonUSD.Checked) urun.paraBirimi = ParaBirimi.USD;
+            else  urun.paraBirimi = ParaBirimi.EUR;
+
+            if (pictureBox1.Image != null)
+            {
+                Image image = pictureBox1.Image;
+                string gorselYolu = "Images";
+
+                if (!Directory.Exists(gorselYolu))
+                {
+                    Directory.CreateDirectory(gorselYolu);
+                }
+
+                Guid guid = Guid.NewGuid();
+
+                string dosyaAdi = Path.Combine(gorselYolu, $"{guid}.jpg");
+                image.Save(dosyaAdi, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                urun.Resim = $"{guid}.jpg";
+            }
             
 
             foreach(string item in listBoxozellik.Items)
@@ -316,6 +340,29 @@ namespace WinFormsApp11
             {
                 MessageBox.Show("Boş geçilemez", "Uyarı", MessageBoxButtons.OK);
             }
+        }
+
+        private void textBoxName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (textBoxName.TextLength == 50)
+            {
+                e.Handled = true;
+            }
+            if (textBoxName.TextLength == 50 && e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Delete)
+            {
+                e.Handled = false;
+                
+            }
+            if (textBoxName.TextLength >= 50 && e.KeyChar == '.')
+            
+                e.Handled = true;
+            
+        }
+
+            private void textBoxName_TextChanged(object sender, EventArgs e)
+        {
+            labelStokAdiLimit.Text = (50 - textBoxName.TextLength).ToString();
+
         }
     }
 
