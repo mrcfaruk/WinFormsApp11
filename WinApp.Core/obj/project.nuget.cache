@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DpcyVJCtWJ3GKX8a6/hiXiZeYywUZZJvvqlzlwriJskmnBWIOOMSLs4BEzv4d5jvLkCkTckxQWaGysQkFILT/Q==",
+  "dgSpecHash": "YwSBWfIGFUg2qDczkBiCGmUfwmx60o9dY7USWacfNGBqknB9XcGFDCtPvUcX7QI8a5jq2dwkJjYCRBM0SDNTAw==",
   "success": true,
   "projectFilePath": "C:\\Users\\UY1-07\\Desktop\\Kayıt Defteri\\WinFormsApp11\\WinApp.Core\\WinFormsApp11.Core.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\UY1-07\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",
     "C:\\Users\\UY1-07\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\UY1-07\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\UY1-07\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\UY1-07\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\UY1-07\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\UY1-07\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

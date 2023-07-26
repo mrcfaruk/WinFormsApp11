@@ -35,3 +35,4 @@ C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinFormsApp11\bin\Debug\net
 C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinFormsApp11\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinFormsApp11\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinFormsApp11\obj\Debug\net6.0-windows\WinFormsApp11.FormProductList.resources
+C:\Users\UY1-07\Desktop\Kayıt Defteri\WinFormsApp11\WinFormsApp11\bin\Debug\net6.0-windows\Newtonsoft.Json.dll

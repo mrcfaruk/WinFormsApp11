@@ -1,15 +1,19 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsapp11.Bussiness;
+using WinFormsApp11.Model;
 using WinFormsApp11.Model.Enums;
 using WinFormsApp11.Models;
+using static System.Net.WebRequestMethods;
 
 namespace WinFormsApp11
 {
@@ -17,6 +21,8 @@ namespace WinFormsApp11
     {
         FormProductList? _formProductList;
         Urun _urun = new();
+        double _dolarKuru;
+        double _euroKuru;
         public FormProduct(FormProductList? formProductList =null, int id = 0) 
         {
             InitializeComponent();
@@ -66,6 +72,31 @@ namespace WinFormsApp11
             
         }
 
+        private async void DolarKuruCek()
+        {
+            string url = "https://api.currencyapi.com/v3/latest?apikey=cur_live_KosS53In7BxfBJCuICPjNpGVs6hjnTwz62SrwFAN&currencies=TRY";
+            string url2 = "https://api.currencyapi.com/v3/latest?apikey=cur_live_2HM0TtZ1t8EgyhaIl72RiuHuWC5RQHCfbrVXqVC1&currencies=TRY&base_currency=EUR";
+
+
+            using (HttpClient client = new HttpClient())
+            {
+              HttpResponseMessage response = await client.GetAsync(url);
+
+              if(response.IsSuccessStatusCode)
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    Kur? kur = JsonSerializer.Deserialize<Kur>(responseBody);
+
+                    if(kur != null)
+                    {
+                        _dolarKuru = Math.Round(kur.Data.Try.Value, 2);
+                        labelUsdKur.Text = _dolarKuru.ToString();
+                    }
+
+                   
+                }
+            }
+        }
         private void GenelToplamHesapla()
         {
             try
@@ -74,6 +105,18 @@ namespace WinFormsApp11
                 int adet = Convert.ToInt32(textBoxAdet.Text);
                 double genelToplam = fiyat * adet;
                 textBoxGenelToplam.Text = genelToplam.ToString();
+
+                if(radioButtonUSD.Checked = true)
+                {
+                    double dovizFiyati = Math.Round(genelToplam * _dolarKuru, 2);
+                    textBoxDovizFiyati.Text = dovizFiyati.ToString();
+                }
+
+                if(radioButtonEUR.Checked = true)
+                {
+                    double euroFiyat = Math.Round(genelToplam * _euroKuru, 2);
+                    textBoxDovizFiyati.Text = euroFiyat.ToString();
+                }
             }
             catch (Exception)
             {
@@ -137,6 +180,7 @@ namespace WinFormsApp11
 
         private void FormProduct_Load(object sender, EventArgs e)
         {
+            DolarKuruCek();
             comboBoxBirim.DropDownStyle = ComboBoxStyle.DropDownList;
             
             comboBoxKDV.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -363,6 +407,35 @@ namespace WinFormsApp11
         {
             labelStokAdiLimit.Text = (50 - textBoxName.TextLength).ToString();
 
+        }
+
+        private void textBoxGenelToplam_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonUSD_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButtonUSD.Checked)
+            {
+                GenelToplamHesapla();
+            }
+        }
+
+        private void radioButtonTRY_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButtonTRY.Checked)
+            {
+                textBoxDovizFiyati.Clear();
+            }
+        }
+
+        private void radioButtonEUR_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButtonEUR.Checked)
+            {
+                GenelToplamHesapla();
+            }
         }
     }
 

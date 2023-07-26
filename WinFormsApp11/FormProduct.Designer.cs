@@ -43,6 +43,8 @@
             this.textBoxBarkod = new System.Windows.Forms.TextBox();
             this.checkBoxAktif = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelDovizFiyati = new System.Windows.Forms.Label();
+            this.textBoxDovizFiyati = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxKDVDahilToplam = new System.Windows.Forms.TextBox();
             this.textBoxGenelToplam = new System.Windows.Forms.TextBox();
@@ -55,6 +57,7 @@
             this.radioButtonUSD = new System.Windows.Forms.RadioButton();
             this.radioButtonEUR = new System.Windows.Forms.RadioButton();
             this.labelStokAdiLimit = new System.Windows.Forms.Label();
+            this.labelUsdKur = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -119,7 +122,7 @@
             "Gram",
             "Litre",
             "Santimetre"});
-            this.comboBoxBirim.Location = new System.Drawing.Point(12, 208);
+            this.comboBoxBirim.Location = new System.Drawing.Point(14, 237);
             this.comboBoxBirim.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxBirim.Name = "comboBoxBirim";
             this.comboBoxBirim.Size = new System.Drawing.Size(114, 28);
@@ -128,7 +131,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 184);
+            this.label3.Location = new System.Drawing.Point(14, 213);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 20);
             this.label3.TabIndex = 6;
@@ -138,7 +141,7 @@
             // 
             this.dateTimePickerTarih.CustomFormat = "yyyy-MM-dd HH:mm";
             this.dateTimePickerTarih.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerTarih.Location = new System.Drawing.Point(14, 273);
+            this.dateTimePickerTarih.Location = new System.Drawing.Point(16, 302);
             this.dateTimePickerTarih.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePickerTarih.Name = "dateTimePickerTarih";
             this.dateTimePickerTarih.Size = new System.Drawing.Size(142, 27);
@@ -147,7 +150,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 249);
+            this.label4.Location = new System.Drawing.Point(16, 278);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 20);
             this.label4.TabIndex = 8;
@@ -211,23 +214,43 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.labelDovizFiyati);
+            this.groupBox1.Controls.Add(this.textBoxDovizFiyati);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.textBoxKDVDahilToplam);
             this.groupBox1.Controls.Add(this.textBoxGenelToplam);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(395, 321);
+            this.groupBox1.Location = new System.Drawing.Point(352, 278);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(227, 79);
+            this.groupBox1.Size = new System.Drawing.Size(270, 122);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Genel Bilgiler";
             // 
+            // labelDovizFiyati
+            // 
+            this.labelDovizFiyati.AutoSize = true;
+            this.labelDovizFiyati.Location = new System.Drawing.Point(13, 90);
+            this.labelDovizFiyati.Name = "labelDovizFiyati";
+            this.labelDovizFiyati.Size = new System.Drawing.Size(104, 20);
+            this.labelDovizFiyati.TabIndex = 5;
+            this.labelDovizFiyati.Text = "Döviz Fiyatı(₺)";
+            // 
+            // textBoxDovizFiyati
+            // 
+            this.textBoxDovizFiyati.Location = new System.Drawing.Point(118, 87);
+            this.textBoxDovizFiyati.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxDovizFiyati.Name = "textBoxDovizFiyati";
+            this.textBoxDovizFiyati.ReadOnly = true;
+            this.textBoxDovizFiyati.Size = new System.Drawing.Size(114, 27);
+            this.textBoxDovizFiyati.TabIndex = 4;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(30, 51);
+            this.label8.Location = new System.Drawing.Point(13, 55);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 20);
             this.label8.TabIndex = 3;
@@ -235,7 +258,7 @@
             // 
             // textBoxKDVDahilToplam
             // 
-            this.textBoxKDVDahilToplam.Location = new System.Drawing.Point(108, 43);
+            this.textBoxKDVDahilToplam.Location = new System.Drawing.Point(116, 52);
             this.textBoxKDVDahilToplam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxKDVDahilToplam.Name = "textBoxKDVDahilToplam";
             this.textBoxKDVDahilToplam.ReadOnly = true;
@@ -244,12 +267,13 @@
             // 
             // textBoxGenelToplam
             // 
-            this.textBoxGenelToplam.Location = new System.Drawing.Point(105, 8);
+            this.textBoxGenelToplam.Location = new System.Drawing.Point(116, 22);
             this.textBoxGenelToplam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxGenelToplam.Name = "textBoxGenelToplam";
             this.textBoxGenelToplam.ReadOnly = true;
             this.textBoxGenelToplam.Size = new System.Drawing.Size(114, 27);
             this.textBoxGenelToplam.TabIndex = 1;
+            this.textBoxGenelToplam.TextChanged += new System.EventHandler(this.textBoxGenelToplam_TextChanged);
             // 
             // label6
             // 
@@ -262,7 +286,7 @@
             // 
             // textBoxAdet
             // 
-            this.textBoxAdet.Location = new System.Drawing.Point(132, 208);
+            this.textBoxAdet.Location = new System.Drawing.Point(134, 237);
             this.textBoxAdet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxAdet.Name = "textBoxAdet";
             this.textBoxAdet.Size = new System.Drawing.Size(60, 27);
@@ -273,7 +297,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(135, 184);
+            this.label7.Location = new System.Drawing.Point(137, 213);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 20);
             this.label7.TabIndex = 16;
@@ -281,7 +305,7 @@
             // 
             // textBoxozellik
             // 
-            this.textBoxozellik.Location = new System.Drawing.Point(12, 308);
+            this.textBoxozellik.Location = new System.Drawing.Point(14, 337);
             this.textBoxozellik.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxozellik.Name = "textBoxozellik";
             this.textBoxozellik.Size = new System.Drawing.Size(137, 27);
@@ -292,7 +316,7 @@
             // 
             this.listBoxozellik.FormattingEnabled = true;
             this.listBoxozellik.ItemHeight = 20;
-            this.listBoxozellik.Location = new System.Drawing.Point(12, 343);
+            this.listBoxozellik.Location = new System.Drawing.Point(14, 372);
             this.listBoxozellik.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBoxozellik.Name = "listBoxozellik";
             this.listBoxozellik.Size = new System.Drawing.Size(137, 124);
@@ -311,6 +335,7 @@
             this.radioButtonTRY.TabStop = true;
             this.radioButtonTRY.Text = "TRY";
             this.radioButtonTRY.UseVisualStyleBackColor = true;
+            this.radioButtonTRY.CheckedChanged += new System.EventHandler(this.radioButtonTRY_CheckedChanged);
             // 
             // radioButtonUSD
             // 
@@ -323,6 +348,7 @@
             this.radioButtonUSD.TabStop = true;
             this.radioButtonUSD.Text = "USD";
             this.radioButtonUSD.UseVisualStyleBackColor = true;
+            this.radioButtonUSD.CheckedChanged += new System.EventHandler(this.radioButtonUSD_CheckedChanged);
             // 
             // radioButtonEUR
             // 
@@ -335,6 +361,7 @@
             this.radioButtonEUR.TabStop = true;
             this.radioButtonEUR.Text = "EUR";
             this.radioButtonEUR.UseVisualStyleBackColor = true;
+            this.radioButtonEUR.CheckedChanged += new System.EventHandler(this.radioButtonEUR_CheckedChanged);
             // 
             // labelStokAdiLimit
             // 
@@ -345,11 +372,21 @@
             this.labelStokAdiLimit.TabIndex = 22;
             this.labelStokAdiLimit.Text = "50";
             // 
+            // labelUsdKur
+            // 
+            this.labelUsdKur.AutoSize = true;
+            this.labelUsdKur.Location = new System.Drawing.Point(78, 184);
+            this.labelUsdKur.Name = "labelUsdKur";
+            this.labelUsdKur.Size = new System.Drawing.Size(36, 20);
+            this.labelUsdKur.TabIndex = 23;
+            this.labelUsdKur.Text = "0.00";
+            // 
             // FormProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 480);
+            this.ClientSize = new System.Drawing.Size(622, 510);
+            this.Controls.Add(this.labelUsdKur);
             this.Controls.Add(this.labelStokAdiLimit);
             this.Controls.Add(this.radioButtonEUR);
             this.Controls.Add(this.radioButtonUSD);
@@ -415,5 +452,8 @@
         private RadioButton radioButtonUSD;
         private RadioButton radioButtonEUR;
         private Label labelStokAdiLimit;
+        private Label labelUsdKur;
+        private Label labelDovizFiyati;
+        private TextBox textBoxDovizFiyati;
     }
 }
